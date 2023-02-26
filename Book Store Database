@@ -1,0 +1,31 @@
+--Create a book store database
+CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT, author TEXT,quantity INTEGER, price NUMERIC);
+
+INSERT into books VALUES(1,"Alanna: the First Adventure","Tamora Pierce", 10, 4.5);
+INSERT into books VALUES(2,"In the Hand of the Goddess","Tamora Pierce", 9, 4.5);
+INSERT into books VALUES(3,"Woman Who Rides Like a Man","Tamora Pierce", 8,  4); 
+INSERT into books VALUES(4,"Lioness Rampant","Tamora Pierce",7, 5);
+INSERT into books VALUES(5, "Guilty Pleasures", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(6, "Laughing Corpse", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(7, "Circus of the Damned", "Laurell K. Hamilton", 3, 3.5);
+INSERT into books VALUES(8, "The Lunatic Cafe", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(9, "Bloody Bones", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(10,"The Killing Dance", "Laurell K Hamilton", 8, 3);
+INSERT into books VALUES(11, "Burnt Offering", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(12, "Blue Moon", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(13, "Obsidian Butterfly", "Laurell K. Hamilton", 3, 5);
+INSERT into books VALUES(14, "Narcissus in Chains", "Laurell K. Hamilton", 3, 5);
+INSERT INTO books VALUES(15,"Cerulean Sins", "Laurell K. Hamilton",4,4.5);
+
+--display the database ordered by price.
+SELECT * FROM books 
+ORDER BY price;
+
+--what is the possible profit per title?
+SELECT title,(quantity*price) from books
+
+-- What are the titles the top five titles we have the most of?
+SELECT title, price, quantity
+FROM books
+order by quantity desc
+limit 5;
